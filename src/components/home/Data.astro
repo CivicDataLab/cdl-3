@@ -1,34 +1,61 @@
+---
+import Icon from '@/components/icon.astro'
+---
+
 <div class="container">
   <div class="wrapper">
-    <h2>Data at CDL</h2>
-    <div class="data">
-      <span class="number">36,860</span>
-      <span class="title">Public Contracts Opened</span>
+    <div>
+      <h2>Data at CDL</h2>
+      <div class="data">
+        <span class="number">36,860</span>
+        <span class="title">public contracts opened</span>
+      </div>
+    </div>
+    <div>
+      <img src="/india.png" alt="india" width={559} height={634} />
     </div>
   </div>
 </div>
 
 <style lang="scss">
   .container {
-    background-color: #a8daa8;
-    padding-block: 24px;
-    margin-bottom: 32px;
+    background-color: rgba(237, 247, 237, 1);
+    padding-top: 105px;
+    padding-bottom: 132px;
+    margin-bottom: 68px;
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
   }
 
   .data {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+    gap: 8px;
+    margin-top: 28px;
+    padding: 12px;
+
+    background-image: url('/border.svg');
   }
+
   .number {
-    font-size: 2.5em;
-    font-weight: bold;
-    color: #e22f54;
+    font-size: 4rem;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 1);
   }
+
   .title {
-    font-size: 1.5em;
-    font-weight: bold;
+    font-size: 2rem;
+    max-width: 274px;
   }
 </style>
