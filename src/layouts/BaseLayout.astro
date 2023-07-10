@@ -1,0 +1,22 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts'
+import '@fontsource-variable/montserrat'
+import Footer from '../components/Footer.astro'
+const { title } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <slot />
+    <!-- <Footer /> -->
+  </body>
+</html>
