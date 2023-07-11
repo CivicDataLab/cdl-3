@@ -4,14 +4,16 @@ import Icon from '@/components/icon.astro'
 
 <div class="container">
   <div class="wrapper">
-    <div>
+    <div class="left">
       <h2>Data at CDL</h2>
-      <div class="data">
-        <span class="number">36,860</span>
-        <span class="title">public contracts opened</span>
+      <div class="bg">
+        <div class="data">
+          <span class="number">36,860</span>
+          <span class="title">public contracts opened</span>
+        </div>
       </div>
     </div>
-    <div>
+    <div class="map">
       <img src="/india.png" alt="india" width={559} height={634} />
     </div>
   </div>
@@ -30,6 +32,17 @@ import Icon from '@/components/icon.astro'
     align-items: center;
     justify-content: space-between;
     gap: 32px;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
   }
 
   h2 {
@@ -38,14 +51,27 @@ import Icon from '@/components/icon.astro'
     text-transform: uppercase;
   }
 
+  .bg {
+    background-image: url('/border.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    min-width: 417px;
+    min-height: 238px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      line-height: normal;
+    }
+  }
+
   .data {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-top: 28px;
-    padding: 12px;
-
-    background-image: url('/border.svg');
+    transform: translate(12px, -12px);
   }
 
   .number {
@@ -57,5 +83,11 @@ import Icon from '@/components/icon.astro'
   .title {
     font-size: 2rem;
     max-width: 274px;
+  }
+
+  .map {
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 </style>
