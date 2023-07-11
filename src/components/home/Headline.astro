@@ -1,43 +1,33 @@
 ---
 import Icon from '@/components/icon.astro'
 
-const links = [
-  {
-    title: 'Capacity Building',
-    link: '/cb',
-  },
-  {
-    title: 'Platforms',
-    link: '/cb',
-  },
-  {
-    title: 'Strategy',
-    link: '/cb',
-  },
-  {
-    title: 'Data Science',
-    link: '/cb',
-  },
-  {
-    title: 'Open Data',
-    link: '/cb',
-  },
-]
+interface Props {
+  data: {
+    title: string
+    description: string
+    links: {
+      title: string
+      url: string
+    }[]
+  }
+}
+
+const { data } = Astro.props
 ---
 
 <div class="wrapper">
   <div class="text">
-    <p class="strong">We work to strengthen CIVIC ENGAGEMENT</p>
+    <p class="strong">{data.title}</p>
     <p class="desc">
-      We make data accessible, relevant, productive, effective & impactful using
+      {data.description}
     </p>
     <Icon icon="fancy-arrow" />
   </div>
   <div class="link-wrapper">
     <div class="links">
       {
-        links.map((link) => (
-          <a href={link.link}>
+        data.links.map((link) => (
+          <a href={link.url}>
             <span>{link.title}</span>
             <Icon icon="arrow-right" width="24" height="24" />
           </a>

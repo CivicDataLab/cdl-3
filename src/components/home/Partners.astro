@@ -1,10 +1,22 @@
 ---
 import Icon from '../icon.astro'
+
+interface Props {
+  data: {
+    title: string
+    carousel: {
+      image: string
+      url: string
+    }[]
+  }
+}
+
+const { data } = Astro.props
 ---
 
 <div class="container">
   <div class="wrapper">
-    <h2>our partners</h2>
+    <h2>{data.title}</h2>
     <div class="carousel">
       <button aria-label="previous item">
         <Icon icon="arrow-left" />

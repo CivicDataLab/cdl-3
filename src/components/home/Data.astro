@@ -1,14 +1,23 @@
 ---
+interface Props {
+  data: {
+    title: string
+    number: string
+    description: string
+  }
+}
+
+const { data } = Astro.props
 ---
 
 <div class="container">
   <div class="wrapper">
     <div class="left">
-      <h2>Data at CDL</h2>
+      <h2>{data.title}</h2>
       <div class="bg">
         <div class="data">
-          <span class="number">36,860</span>
-          <span class="title">public contracts opened</span>
+          <span class="number">{data.number}</span>
+          <span class="title">{data.description}</span>
         </div>
       </div>
     </div>

@@ -1,19 +1,26 @@
+---
+interface Props {
+  data: {
+    title: string
+    description: string
+    link: {
+      title: string
+      url: string
+    }
+  }
+}
+
+const { data } = Astro.props
+---
+
 <div class="wrapper">
-  <h2>What is CDL?</h2>
+  <h2>{data.title}</h2>
   <div class="text">
     <p>
-      Lorem ipsum dolor sit amet consectetur. Venenatis massa vulputate rhoncus
-      sed amet. Risus ut congue pretium nisi imperdiet. Semper vestibulum at
-      nisl commodo placerat consectetur aliquam natoque ut. Purus sollicitudin
-      eu porttitor vestibulum vitae suscipit.
-      <br />
-      <br />
-      Lorem ipsum dolor sit amet consectetur. Venenatis massa vulputate rhoncus sed
-      amet. Risus ut congue pretium nisi imperdietisl commodo placerat consectetur
-      aliquam natoque ut. Purus sollicitudin eu porttitor vestibulum vitae suscipit.
+      {data.description}
     </p>
   </div>
-  <a class="cta" href="/about">Meet our multidisciplinary team</a>
+  <a class="cta" href={data.link.url}>{data.link.title}</a>
 </div>
 
 <style lang="scss">
