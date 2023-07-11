@@ -16,9 +16,9 @@
   <a class="cta" href="/about">Meet our multidisciplinary team</a>
 </div>
 
-<style>
+<style lang="scss">
   .wrapper {
-    margin-bottom: 128px;
+    margin-bottom: var(--home-block-space);
     text-align: center;
   }
 
@@ -34,6 +34,10 @@
     font-weight: 500;
     line-height: 160%;
     font-size: 1.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.25rem;
+    }
   }
 
   .cta {
@@ -48,5 +52,9 @@
 
     border-radius: 50px;
     border: 4px solid #005360;
+
+    @media (max-width: 768px) {
+      font-size: 1.25rem;
+    }
   }
 </style>

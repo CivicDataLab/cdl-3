@@ -54,7 +54,7 @@ const links = [
     align-items: center;
     justify-content: space-between;
     gap: 164px;
-    margin-bottom: 128px;
+    margin-bottom: var(--home-block-space);
 
     @media (max-width: 768px) {
       flex-direction: column;
@@ -101,6 +101,10 @@ const links = [
     flex-basis: 550px;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 768px) {
+      flex-basis: 0;
+    }
   }
 
   .links {
