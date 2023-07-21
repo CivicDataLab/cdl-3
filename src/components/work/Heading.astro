@@ -1,17 +1,26 @@
-<div class="heading">
+---
+interface Props {
+	data: {
+		title: string
+		description: string
+	}
+}
+
+const { data } = Astro.props
+---
+
+<section>
 	<div class="wrapper">
-		<h1>Our Work</h1>
+		<h1>{data.title}</h1>
 		<p>
-			Lorem ipsum dolor sit amet consectetur. Quam morbi hendrerit turpis
-			convallis id magna congue. Est quisque suspendisse proin posuere
+			{data.description}
 		</p>
 	</div>
-</div>
+</section>
 
 <style lang="scss">
-	.heading {
+	section {
 		margin-top: 90px;
-		min-height: 80vh;
 	}
 
 	h1 {
@@ -22,9 +31,10 @@
 	}
 
 	p {
+		font-size: 1.25rem;
+		line-height: 1.33;
+		font-weight: 500;
 		max-width: 552px;
 		margin-top: 16px;
-		font-weight: 500;
-		line-height: 1.33;
 	}
 </style>

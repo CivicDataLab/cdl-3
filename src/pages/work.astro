@@ -2,12 +2,14 @@
 import { getCollection } from 'astro:content'
 import SiteLayout from '../layouts/BaseLayout.astro'
 import Heading from '../components/work/Heading.astro'
+import Initiatives from '../components/work/Initiatives.astro'
 
-const content = await getCollection('home')
+const content = await getCollection('work')
 ---
 
 <SiteLayout>
 	<main>
-		<Heading />
+		<Heading data={content[0].data.heading} />
+		<Initiatives data={content[0].data.initiatives} />
 	</main>
 </SiteLayout>

@@ -1,0 +1,73 @@
+---
+import Card from './Card.astro'
+interface Props {
+	data: {
+		title: string
+		description: string
+		image: string
+		url: string
+	}[]
+}
+
+const { data } = Astro.props
+---
+
+<section>
+	<div class="first">
+		<div class="wrapper">
+			<Card data={data[0]} />
+			<Card data={data[1]} />
+		</div>
+	</div>
+	<div class="second">
+		<div class="wrapper">
+			<Card data={data[2]} />
+			<Card data={data[3]} />
+		</div>
+	</div>
+	<div class="third">
+		<div class="wrapper">
+			<Card data={data[4]} />
+			<Card data={data[5]} />
+		</div>
+	</div>
+</section>
+
+<style lang="scss">
+	section {
+		margin-top: 60px;
+
+		> div {
+			padding-block: 60px;
+		}
+	}
+
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 80px;
+	}
+
+	.first,
+	.third {
+		background-color: var(--background-light);
+	}
+
+	.second {
+		:global(article) {
+			flex-direction: row-reverse;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.first,
+		.second,
+		.third {
+			:global(article) {
+				flex-wrap: wrap;
+				justify-content: center;
+				flex-direction: column-reverse;
+			}
+		}
+	}
+</style>

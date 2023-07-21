@@ -37,4 +37,21 @@ const home = defineCollection({
 	}),
 })
 
-export const collections = { home }
+const work = defineCollection({
+	schema: z.object({
+		heading: z.object({
+			title: z.string(),
+			description: z.string(),
+		}),
+		initiatives: z.array(
+			z.object({
+				title: z.string(),
+				description: z.string(),
+				image: z.string(),
+				url: z.string(),
+			})
+		),
+	}),
+})
+
+export const collections = { home, work }

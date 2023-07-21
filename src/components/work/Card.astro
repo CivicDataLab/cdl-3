@@ -1,0 +1,62 @@
+---
+interface Props {
+	data: {
+		title: string
+		description: string
+		image: string
+		url: string
+	}
+}
+
+const { data } = Astro.props
+---
+
+<article class="initiative-card">
+	<div>
+		<h2>{data.title}</h2>
+		<p>
+			{data.description}
+		</p>
+		<a href={data.url}>Learn More</a>
+	</div>
+	<img src={data.image} width={280} height={280} class="logo" alt="" />
+</article>
+
+<style lang="scss">
+	article {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 32px;
+
+		.logo {
+			width: 280px;
+			height: 280px;
+			border-radius: 50%;
+			background-color: #d9d9d9;
+		}
+	}
+
+	h2 {
+		font-size: 2rem;
+		font-weight: 400;
+		line-height: 1.6;
+		text-transform: uppercase;
+	}
+
+	p {
+		font-size: 1.125rem;
+		line-height: 1.33;
+		font-weight: 500;
+		max-width: 510px;
+		margin-top: 12px;
+	}
+
+	a {
+		color: var(--text-high);
+		font-weight: 600;
+		margin-top: 12px;
+		display: inline-block;
+		font-size: 0.875rem;
+	}
+</style>
