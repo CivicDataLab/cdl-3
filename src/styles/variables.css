@@ -1,0 +1,11 @@
+:root {
+	--background-lighter: #ffffff;
+	--background-light: #edf7ed;
+	--background-dark: #1a7f8f;
+	--background-darker: #1c1c1c;
+
+	--text-high: #1c1c1c;
+	--text-medium: #4a4a4a;
+	--text-low: #999999;
+	--text-on-background: #ffffff;
+}

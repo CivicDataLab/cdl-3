@@ -4,9 +4,17 @@ import { SITE_TITLE } from '../consts'
 ---
 
 <header class="wrapper">
-	<h1>
-		{SITE_TITLE}
-	</h1>
+	<div>
+		<a href="/">
+			<img
+				src="/icons/cdl.svg"
+				alt="half seed on the left with CDL text inside it, 
+						civic data lab text on the right"
+				width={70}
+				height={92}
+			/>
+		</a>
+	</div>
 	<nav class="desktop">
 		<HeaderLink href="/">Home</HeaderLink>
 		<HeaderLink href="/work">Work</HeaderLink>
@@ -61,7 +69,7 @@ import { SITE_TITLE } from '../consts'
 		z-index: 100;
 		position: relative;
 
-		padding: 32px 0;
+		padding: 12px 0;
 
 		@media (max-width: 768px) {
 			align-items: flex-start;
