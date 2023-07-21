@@ -1,0 +1,38 @@
+---
+interface Props {
+	data: {
+		title: string
+		description: string[]
+	}
+}
+
+const { data } = Astro.props
+---
+
+<section>
+	<div class="wrapper">
+		<h1>{data.title}</h1>
+		{data.description.map((paragraph) => <p>{paragraph}</p>)}
+	</div>
+</section>
+
+<style lang="scss">
+	section {
+		margin-top: 90px;
+
+		h1 {
+			font-size: 2rem;
+			font-weight: 400;
+			line-height: 1.6;
+			text-transform: uppercase;
+		}
+
+		p {
+			font-size: 1.25rem;
+			line-height: 1.33;
+			font-weight: 500;
+			max-width: 1030px;
+			margin-top: 16px;
+		}
+	}
+</style>

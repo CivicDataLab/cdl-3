@@ -1,0 +1,64 @@
+---
+interface Props {
+	data: {
+		name: string
+		role: string
+		image: string
+	}
+}
+
+const { data } = Astro.props
+---
+
+<article>
+	<div class="image">
+		<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute">
+			<defs>
+				<clipPath id="mask">
+					<path
+						d="M130 248.308C130 361.81 126.232 375 105.13 375 56.641 375 0 350.675 0 248.308 0 145.941 87.043-5.075 116.812.131 129.769 2.397 130 145.941 130 248.308Z"
+					></path>
+				</clipPath>
+			</defs>
+		</svg>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 375">
+			<image
+				width={130}
+				height={375}
+				clip-path="url(#mask)"
+				xlink:href={data.image}
+			/>
+		</svg>
+	</div>
+	<!-- <img src={data.image} alt="" width={130} height={375} /> -->
+	<div>
+		<h3>{data.name}</h3>
+		<p class="role">{data.role}</p>
+	</div>
+</article>
+
+<style lang="scss">
+	article {
+		display: flex;
+		gap: 24px;
+		align-items: flex-end;
+
+		h3 {
+			font-weight: 400;
+			font-size: 1.75rem;
+			line-height: 1.6;
+			text-transform: uppercase;
+		}
+
+		.image {
+			width: 130px;
+			height: 375px;
+		}
+	}
+
+	.role {
+		font-size: 1.25rem;
+		line-height: 1.33;
+		font-weight: 500;
+	}
+</style>

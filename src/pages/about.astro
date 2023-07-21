@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content'
+import Heading from '../components/about/Heading.astro'
+import Mission from '../components/about/Mission.astro'
+import Video from '../components/about/Video.astro'
+import Team from '../components/about/Team.astro'
+import SiteLayout from '../layouts/BaseLayout.astro'
+
+const content = await getCollection('about')
+---
+
+<SiteLayout>
+	<main>
+		<Heading data={content[0].data.heading} />
+		<Video />
+		<Mission data={content[0].data.mission} />
+		<Team data={content[0].data.team} />
+	</main>
+</SiteLayout>

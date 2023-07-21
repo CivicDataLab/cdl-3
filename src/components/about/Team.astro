@@ -1,0 +1,59 @@
+---
+import BandhuCard from './BandhuCard.astro'
+interface Props {
+	data: {
+		title: string
+		bandhus: {
+			name: string
+			role: string
+			image: string
+		}[]
+	}
+}
+
+const { data } = Astro.props
+---
+
+<section>
+	<div class="wrapper">
+		<h2>{data.title}</h2>
+		<div class="bandhus">
+			{data.bandhus.map((bandhu) => <BandhuCard data={bandhu} />)}
+		</div>
+	</div>
+</section>
+
+<style lang="scss">
+	section {
+		background: linear-gradient(
+			180deg,
+			var(--background-light) 67.28%,
+			rgba(237, 247, 237, 0) 100%
+		);
+		margin-top: 90px;
+		padding-block: 60px 120px;
+
+		h2 {
+			font-size: 2rem;
+			font-weight: 400;
+			line-height: 1.6;
+			text-transform: uppercase;
+		}
+
+		p {
+			font-size: 1.25rem;
+			line-height: 1.33;
+			font-weight: 500;
+			max-width: 900px;
+
+			margin-top: 24px;
+		}
+	}
+
+	.bandhus {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+		gap: 60px;
+		margin-top: 62px;
+	}
+</style>
