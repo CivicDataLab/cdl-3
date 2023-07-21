@@ -26,47 +26,47 @@ team:
         {
           name: 'Abhinav',
           role: 'Tech Lead',
-          image: 'https://source.unsplash.com/random/129x375?male',
+          image: 'https://source.unsplash.com/random/129x375?abstract',
         },
         {
           name: 'Apoorv',
           role: 'Data Lead',
-          image: 'https://source.unsplash.com/random/131x375?male',
+          image: 'https://source.unsplash.com/random/131x375?abstract',
         },
         {
           name: 'Arun',
           role: 'Senior Researcher',
-          image: 'https://source.unsplash.com/random/132x375?male',
+          image: 'https://source.unsplash.com/random/132x375?abstract',
         },
         {
           name: 'Deepthi',
           role: 'Founder',
-          image: 'https://source.unsplash.com/random/133x375?male',
+          image: 'https://source.unsplash.com/random/133x375?abstract',
         },
         {
           name: 'Gaurav',
           role: 'Founder',
-          image: 'https://source.unsplash.com/random/134x375?male',
+          image: 'https://source.unsplash.com/random/134x375?abstract',
         },
         {
           name: 'Kabeer',
           role: 'Initiative Lead',
-          image: 'https://source.unsplash.com/random/128x375?male',
+          image: 'https://source.unsplash.com/random/128x375?abstract',
         },
         {
           name: 'Nupura',
           role: 'Design Lead',
-          image: 'https://source.unsplash.com/random/127x375?female',
+          image: 'https://source.unsplash.com/random/127x375?abstract',
         },
         {
           name: 'Shreya',
           role: 'Data Engineer',
-          image: 'https://source.unsplash.com/random/126x375?female',
+          image: 'https://source.unsplash.com/random/126x375?abstract',
         },
         {
           name: 'Shoaib',
           role: 'Frontend Engineer',
-          image: 'https://source.unsplash.com/random/130x375?male',
+          image: 'https://source.unsplash.com/random/130x375?abstract',
         },
       ],
   }
