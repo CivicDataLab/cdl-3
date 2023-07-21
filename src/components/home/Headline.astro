@@ -2,138 +2,138 @@
 import Icon from '@/components/icon.astro'
 
 interface Props {
-  data: {
-    title: string
-    description: string
-    links: {
-      title: string
-      url: string
-    }[]
-  }
+	data: {
+		title: string
+		description: string
+		links: {
+			title: string
+			url: string
+		}[]
+	}
 }
 
 const { data } = Astro.props
 ---
 
 <div class="wrapper">
-  <div class="text">
-    <p class="strong">{data.title}</p>
-    <p class="desc">
-      {data.description}
-    </p>
-    <Icon icon="fancy-arrow" />
-  </div>
-  <div class="link-wrapper">
-    <div class="links">
-      {
-        data.links.map((link) => (
-          <a href={link.url}>
-            <span>{link.title}</span>
-            <Icon icon="arrow-right" width="24" height="24" />
-          </a>
-        ))
-      }
-    </div>
-    <a class="more" href="#">Learn More</a>
-  </div>
+	<div class="text">
+		<h1 class="strong">{data.title}</h1>
+		<p class="desc">
+			{data.description}
+		</p>
+		<Icon icon="fancy-arrow" />
+	</div>
+	<div class="link-wrapper">
+		<div class="links">
+			{
+				data.links.map((link) => (
+					<a href={link.url}>
+						<span>{link.title}</span>
+						<Icon icon="arrow-right" width="24" height="24" />
+					</a>
+				))
+			}
+		</div>
+		<a class="more" href="#">Learn More</a>
+	</div>
 </div>
 
 <style lang="scss">
-  .wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 164px;
-    margin-bottom: var(--home-block-space);
+	.wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 164px;
+		margin-bottom: var(--home-block-space);
 
-    @media (max-width: 768px) {
-      flex-direction: column;
-      gap: 64px;
-    }
-  }
+		@media (max-width: 768px) {
+			flex-direction: column;
+			gap: 64px;
+		}
+	}
 
-  .text {
-    max-width: 545px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 64px;
-    position: relative;
+	.text {
+		max-width: 545px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 64px;
+		position: relative;
 
-    svg {
-      position: absolute;
-      bottom: 16px;
-      right: -148px;
-      z-index: -1;
+		svg {
+			position: absolute;
+			bottom: 16px;
+			right: -148px;
+			z-index: -1;
 
-      @media (max-width: 768px) {
-        display: none;
-      }
-    }
-  }
+			@media (max-width: 768px) {
+				display: none;
+			}
+		}
+	}
 
-  .strong {
-    text-align: center;
-    font-size: 2.25rem;
-    font-weight: 800;
-    line-height: 160%;
-    text-transform: uppercase;
-  }
+	.strong {
+		text-align: center;
+		font-size: 2.25rem;
+		font-weight: 800;
+		line-height: 160%;
+		text-transform: uppercase;
+	}
 
-  .desc {
-    font-size: 2rem;
-    font-weight: 500;
-    line-height: 132.9%;
-    max-width: 444px;
-  }
+	.desc {
+		font-size: 2rem;
+		font-weight: 500;
+		line-height: 132.9%;
+		max-width: 444px;
+	}
 
-  .link-wrapper {
-    flex-basis: 550px;
-    display: flex;
-    flex-direction: column;
+	.link-wrapper {
+		flex-basis: 550px;
+		display: flex;
+		flex-direction: column;
 
-    @media (max-width: 768px) {
-      flex-basis: 0;
-    }
-  }
+		@media (max-width: 768px) {
+			flex-basis: 0;
+		}
+	}
 
-  .links {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+	.links {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
 
-    a {
-      text-decoration: none;
-      padding: 12px 40px;
+		a {
+			text-decoration: none;
+			padding: 12px 40px;
 
-      border-radius: 60px;
-      border: 2px solid #1a7f8f;
-      background: #edf7ed;
+			border-radius: 60px;
+			border: 2px solid #1a7f8f;
+			background: #edf7ed;
 
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 16px;
 
-      span {
-        font-weight: 800;
-        text-transform: uppercase;
-        color: rgba(28, 28, 28, 1);
-      }
+			span {
+				font-weight: 800;
+				text-transform: uppercase;
+				color: rgba(28, 28, 28, 1);
+			}
 
-      svg {
-        min-width: 24px;
-      }
-    }
-  }
+			svg {
+				min-width: 24px;
+			}
+		}
+	}
 
-  .more {
-    display: inline-block;
-    font-weight: 600;
-    font-size: 0.875rem;
-    color: rgba(0, 0, 0, 1);
-    padding: 12px;
-    align-self: flex-end;
-    margin-right: 16px;
-  }
+	.more {
+		display: inline-block;
+		font-weight: 600;
+		font-size: 0.875rem;
+		color: rgba(0, 0, 0, 1);
+		padding: 12px;
+		align-self: flex-end;
+		margin-right: 16px;
+	}
 </style>

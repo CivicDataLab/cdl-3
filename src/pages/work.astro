@@ -1,11 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
-import About from '../components/home/About.astro'
-import Data from '../components/home/Data.astro'
-import Heading from '../components/home/Heading.astro'
-import Headline from '../components/home/Headline.astro'
-import Partners from '../components/home/Partners.astro'
 import SiteLayout from '../layouts/BaseLayout.astro'
+import Heading from '../components/work/Heading.astro'
 
 const content = await getCollection('home')
 ---
@@ -13,9 +9,5 @@ const content = await getCollection('home')
 <SiteLayout>
 	<main>
 		<Heading />
-		<Headline data={content[0].data.headline} />
-		<Data data={content[0].data.data} />
-		<About data={content[0].data.about} />
-		<Partners data={content[0].data.partners} />
 	</main>
 </SiteLayout>
