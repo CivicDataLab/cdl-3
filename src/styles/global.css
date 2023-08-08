@@ -10,6 +10,12 @@ body {
 	color: rgba(28, 28, 28, 1);
 	margin: 0;
 }
+
+*,
+::after,
+::before {
+	box-sizing: border-box;
+}
 h1,
 h2,
 h3,
@@ -70,10 +76,12 @@ p {
 	padding-left: 10px;
 }
 
-:root {
-	--home-block-space: 128px;
-
-	@media (max-width: 768px) {
-		--home-block-space: 64px;
-	}
+.sr-only:not(:where(:focus, :active, :focus-within)) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
 }

@@ -17,11 +17,11 @@ const { data } = Astro.props
 
 <div class="wrapper">
 	<div class="text">
-		<h1 class="strong">{data.title}</h1>
+		<h1>working to <span class="strong">strengthen</span> CIVIC ENGAGEMENT</h1>
 		<p class="desc">
-			{data.description}
+			We make data <i>accessible, relevant, productive, effective & impactful</i
+			> using
 		</p>
-		<Icon icon="fancy-arrow" />
 	</div>
 	<div class="link-wrapper">
 		<div class="links">
@@ -29,111 +29,80 @@ const { data } = Astro.props
 				data.links.map((link) => (
 					<a href={link.url}>
 						<span>{link.title}</span>
-						<Icon icon="arrow-right" width="24" height="24" />
 					</a>
 				))
 			}
+			<a class="more" href="#">Learn More</a>
 		</div>
-		<a class="more" href="#">Learn More</a>
 	</div>
 </div>
 
 <style lang="scss">
 	.wrapper {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 164px;
 		margin-bottom: var(--home-block-space);
-
-		@media (max-width: 768px) {
-			flex-direction: column;
-			gap: 64px;
-		}
 	}
 
 	.text {
-		max-width: 545px;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 64px;
-		position: relative;
-
-		svg {
-			position: absolute;
-			bottom: 16px;
-			right: -148px;
-			z-index: -1;
-
-			@media (max-width: 768px) {
-				display: none;
-			}
-		}
+		text-align: center;
 	}
 
-	.strong {
-		text-align: center;
-		font-size: 2.25rem;
-		font-weight: 800;
+	h1 {
+		font-weight: 500;
+		font-size: 2.5rem;
 		line-height: 160%;
 		text-transform: uppercase;
 	}
 
+	.strong {
+		font-weight: 800;
+	}
+
 	.desc {
-		font-size: 2rem;
-		font-weight: 500;
+		font-size: 1.25rem;
+		font-weight: 300;
 		line-height: 132.9%;
-		max-width: 444px;
+		margin-top: var(--space-8);
+
+		i {
+			font-weight: 400;
+		}
 	}
 
 	.link-wrapper {
-		flex-basis: 550px;
-		display: flex;
-		flex-direction: column;
-
-		@media (max-width: 768px) {
-			flex-basis: 0;
-		}
+		margin-top: var(--space-6);
+		max-width: 900px;
+		margin-inline: auto;
 	}
 
 	.links {
 		display: flex;
-		flex-direction: column;
-		gap: 8px;
+		gap: var(--space-8);
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
 
-		a {
+		a:not(.more) {
 			text-decoration: none;
-			padding: 12px 40px;
+			padding: var(--space-3) var(--space-5);
 
-			border-radius: 60px;
-			border: 2px solid #1a7f8f;
-			background: #edf7ed;
+			border-radius: var(--button-corner);
+			border: 4px solid var(--bg-light-blue);
+			background: var(--bg-bright-blue);
+			box-shadow: var(--box-shadow);
 
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			gap: 16px;
+			font-weight: 600;
+			font-size: 1.5rem;
+			color: var(--text-high);
 
-			span {
-				font-weight: 800;
-				text-transform: uppercase;
-				color: rgba(28, 28, 28, 1);
-			}
-
-			svg {
-				min-width: 24px;
-			}
+			min-width: 264px;
+			text-align: center;
 		}
 	}
 
 	.more {
-		display: inline-block;
-		font-weight: 600;
+		padding: var(--space-3);
+		color: var(--text-high);
 		font-size: 0.875rem;
-		color: rgba(0, 0, 0, 1);
-		padding: 12px;
-		align-self: flex-end;
-		margin-right: 16px;
+		font-weight: 600;
 	}
 </style>
