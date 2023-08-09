@@ -77,4 +77,17 @@ const about = defineCollection({
 	}),
 })
 
-export const collections = { home, work, about }
+const footer = defineCollection({
+	schema: z.object({
+		links: z.record(
+			z.array(
+				z.object({
+					title: z.string(),
+					url: z.string(),
+				})
+			)
+		),
+	}),
+})
+
+export const collections = { home, work, about, footer }
