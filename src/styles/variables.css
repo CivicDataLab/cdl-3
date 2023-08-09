@@ -4,12 +4,15 @@
 	--background-dark: #1a7f8f;
 	--background-darker: #1c1c1c;
 
+	--bg-light-blue: #e7f2fe;
+	--bg-bright-blue: #cde5fc;
+	--bg-light-mud: #fcf0d3;
+
 	--text-high: #1c1c1c;
 	--text-medium: #4a4a4a;
 	--text-low: #999999;
 	--text-on-background: #ffffff;
 
-	--home-block-space: 128px;
 	--button-corner: 4px;
 
 	--space-0: 0px;
@@ -30,10 +33,10 @@
 	--space-32: 128px;
 
 	--text-high: #1c1c1c;
-	--bg-light-blue: #e7f2fe;
-	--bg-bright-blue: #cde5fc;
+
 	--box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.08);
 
+	--home-block-space: 108px;
 	@media (max-width: 768px) {
 		--home-block-space: 64px;
 	}

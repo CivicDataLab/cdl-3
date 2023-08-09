@@ -24,9 +24,10 @@ about:
   {
     title: 'What is CDL?',
     description:
-      'Lorem ipsum dolor sit amet consectetur. Venenatis massa vulputate rhoncus sed amet. Risus ut congue pretium nisi imperdiet. Semper vestibulum at nisl commodo placerat consectetur aliquam natoque ut. Purus sollicitudin eu porttitor vestibulum vitae suscipit.
-
-      Lorem ipsum dolor sit amet consectetur. Venenatis massa vulputate rhoncus sed amet. Risus ut congue pretium nisi imperdietisl commodo placerat consectetur aliquam natoque ut. Purus sollicitudin eu porttitor vestibulum vitae suscipit.',
+      [
+        'Lorem ipsum dolor sit amet consectetur. Venenatis massa vulputate rhoncus sed amet. Risus ut congue pretium nisi imperdiet. Semper vestibulum at nisl commodo placerat consectetur aliquam natoque ut. Purus sollicitudin eu porttitor vestibulum vitae suscipit.',
+        'Lorem ipsum dolor sit amet consectetur. Venenatis massa vulputate rhoncus sed amet. Risus ut congue pretium nisi imperdietisl commodo placerat consectetur aliquam natoque ut. Purus sollicitudin eu porttitor vestibulum vitae suscipit.',
+      ],
     link: { title: 'MEET OUR MULTIDISCIPLINARY TEAM', url: '/about' },
   }
 

@@ -1,101 +1,94 @@
 ---
 interface Props {
-  data: {
-    title: string
-    number: string
-    description: string
-  }
+	data: {
+		title: string
+		number: string
+		description: string
+	}
 }
 
 const { data } = Astro.props
 ---
 
 <div class="container">
-  <div class="wrapper">
-    <div class="left">
-      <h2>{data.title}</h2>
-      <div class="bg">
-        <div class="data">
-          <span class="number">{data.number}</span>
-          <span class="title">{data.description}</span>
-        </div>
-      </div>
-    </div>
-    <div class="map">
-      <img src="/india.png" alt="india" width={559} height={634} />
-    </div>
-  </div>
+	<div class="wrapper">
+		<img
+			src="/tags.svg"
+			alt="hash tags for free and open software, foss, design 4 impact and open data"
+			width={1440}
+			height={720}
+		/>
+	</div>
 </div>
 
 <style lang="scss">
-  .container {
-    background-color: rgba(237, 247, 237, 1);
-    padding-top: 105px;
-    padding-bottom: 132px;
-    margin-bottom: 68px;
-  }
+	.container {
+		background-color: var(--bg-light-mud);
 
-  .wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 32px;
+		margin-bottom: 68px;
+	}
 
-    @media (max-width: 768px) {
-      justify-content: center;
-    }
-  }
+	.wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 32px;
 
-  .left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 28px;
-  }
+		@media (max-width: 768px) {
+			justify-content: center;
+		}
+	}
 
-  h2 {
-    font-size: 1.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
-  }
+	.left {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 28px;
+	}
 
-  .bg {
-    background-image: url('/border.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    min-width: 417px;
-    min-height: 238px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	h2 {
+		font-size: 1.75rem;
+		font-weight: 800;
+		text-transform: uppercase;
+	}
 
-    span {
-      line-height: normal;
-    }
-  }
+	.bg {
+		background-image: url('/border.svg');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		min-width: 417px;
+		min-height: 238px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
-  .data {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    transform: translate(12px, -12px);
-  }
+		span {
+			line-height: normal;
+		}
+	}
 
-  .number {
-    font-size: 4rem;
-    font-weight: 700;
-    color: rgba(0, 0, 0, 1);
-  }
+	.data {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		transform: translate(12px, -12px);
+	}
 
-  .title {
-    font-size: 2rem;
-    max-width: 274px;
-  }
+	.number {
+		font-size: 4rem;
+		font-weight: 700;
+		color: rgba(0, 0, 0, 1);
+	}
 
-  .map {
-    @media (max-width: 768px) {
-      display: none;
-    }
-  }
+	.title {
+		font-size: 2rem;
+		max-width: 274px;
+	}
+
+	.map {
+		@media (max-width: 768px) {
+			display: none;
+		}
+	}
 </style>

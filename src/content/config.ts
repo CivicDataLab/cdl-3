@@ -19,7 +19,7 @@ const home = defineCollection({
 		}),
 		about: z.object({
 			title: z.string(),
-			description: z.string(),
+			description: z.array(z.string()),
 			link: z.object({
 				title: z.string(),
 				url: z.string(),
