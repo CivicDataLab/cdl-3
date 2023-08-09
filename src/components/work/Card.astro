@@ -12,7 +12,12 @@ const { data } = Astro.props
 ---
 
 <a href={data.url} class="initiative-card">
-	<img src={data.image} width={280} height={280} class="logo" alt="" />
+	<div class="image">
+		<img src={data.image} width={280} height={280} class="logo" alt="" />
+		<div class="cdl-logo">
+			<img src="/icons/public-finance.png" width={77} height={90} alt="" />
+		</div>
+	</div>
 	<div>
 		<h2>{data.title}</h2>
 		<p>
@@ -36,6 +41,21 @@ const { data } = Astro.props
 			background-color: #d9d9d9;
 			object-fit: cover;
 			height: 285px;
+		}
+	}
+
+	.image {
+		position: relative;
+
+		.cdl-logo {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			transform: translate(10%, 50%);
+
+			padding: var(--space-4) var(--space-6);
+			background-color: var(--background-lighter);
+			border-radius: 50%;
 		}
 	}
 
