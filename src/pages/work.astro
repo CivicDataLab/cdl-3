@@ -8,8 +8,14 @@ const content = await getCollection('work')
 ---
 
 <SiteLayout>
-	<main>
+	<main class="wrapper">
 		<Heading data={content[0].data.heading} />
 		<Initiatives data={content[0].data.initiatives} />
 	</main>
 </SiteLayout>
+
+<style lang="scss">
+	main {
+		margin-bottom: var(--space-24);
+	}
+</style>
