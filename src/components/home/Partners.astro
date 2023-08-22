@@ -1,5 +1,6 @@
 ---
 import Icon from '../icon.astro'
+import Carousel from './Carousel.astro'
 
 interface Props {
 	data: {
@@ -18,16 +19,9 @@ const { data } = Astro.props
 	<div class="bg"></div>
 	<div class="wrapper">
 		<h2>{data.title}</h2>
+
 		<div class="carousel">
-			<button aria-label="previous item">
-				<Icon icon="arrow-left" />
-			</button>
-			<div class="items">
-				<img src="/partners.png" alt="partners" width={1203} height={183} />
-			</div>
-			<button aria-label="next item">
-				<Icon icon="arrow-right" />
-			</button>
+			<Carousel />
 		</div>
 	</div>
 </div>
@@ -61,42 +55,10 @@ const { data } = Astro.props
 	}
 
 	.carousel {
-		display: flex;
-		align-items: center;
-		gap: 24px;
 		margin-top: 108px;
 
 		img {
 			object-fit: contain;
-		}
-
-		button {
-			line-height: 0;
-			border: none;
-			background: transparent;
-			cursor: pointer;
-			padding: 8px;
-
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			transition: all 0.2s ease-in-out;
-			border-radius: 4px;
-
-			&:hover {
-				background: var(--blue-light);
-			}
-
-			&:disabled {
-				opacity: 0.5;
-				cursor: not-allowed;
-			}
-
-			svg {
-				width: 24px;
-				height: 24px;
-				fill: var(--blue-dark);
-			}
 		}
 	}
 </style>
