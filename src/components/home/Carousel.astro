@@ -1,0 +1,133 @@
+---
+import Icon from '../icon.astro'
+---
+
+<div class="wrapper" id="carousel-container">
+	<button aria-label="previous item" id="carousel-prev">
+		<Icon icon="arrow-left" />
+	</button>
+	<swiper-container class="mySwiper">
+		<swiper-slide class="swiper-slide">Slide 1</swiper-slide>
+		<swiper-slide class="swiper-slide">Slide 2</swiper-slide>
+		<swiper-slide class="swiper-slide">Slide 3</swiper-slide>
+		<swiper-slide class="swiper-slide">Slide 4</swiper-slide>
+		<swiper-slide class="swiper-slide">Slide 5</swiper-slide>
+		<swiper-slide class="swiper-slide">Slide 6</swiper-slide>
+		<swiper-slide class="swiper-slide">Slide 7</swiper-slide>
+		<swiper-slide class="swiper-slide">Slide 8</swiper-slide>
+		<swiper-slide class="swiper-slide">Slide 9</swiper-slide>
+	</swiper-container>
+	<button aria-label="next item" id="carousel-next">
+		<Icon icon="arrow-right" />
+	</button>
+</div>
+
+<script
+	src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"
+></script>
+
+<script>
+	const swiperEl: any = document.querySelector('swiper-container')
+	const swiperParams = {
+		spaceBetween: 32,
+		slidesPerView: 1,
+		breakpoints: {
+			640: {
+				slidesPerView: 2,
+			},
+			1024: {
+				slidesPerView: 4,
+			},
+		},
+		on: {
+			init() {
+				const buttonPrev = document.getElementById('carousel-prev')
+				const buttonNext = document.getElementById('carousel-next')
+
+				buttonPrev?.addEventListener('click', () => {
+					swiperEl.swiper.slidePrev()
+				})
+				buttonNext?.addEventListener('click', () => {
+					swiperEl.swiper.slideNext()
+				})
+
+				const wrapper = document.getElementById('carousel-container')
+				wrapper?.addEventListener('keydown', (e) => {
+					if (e.key === 'ArrowLeft') {
+						buttonPrev?.focus()
+						swiperEl.swiper.slidePrev()
+					}
+
+					if (e.key === 'ArrowRight') {
+						buttonNext?.focus()
+						swiperEl.swiper.slideNext()
+					}
+				})
+			},
+		},
+	}
+
+	Object.assign(swiperEl, swiperParams)
+
+	swiperEl?.initialize()
+</script>
+
+<style lang="scss">
+	.wrapper {
+		display: flex;
+		gap: var(--space-4);
+		align-items: center;
+	}
+
+	.mySwiper {
+		width: calc(100% - 100px);
+		display: flex;
+	}
+
+	.swiper-slide {
+		text-align: center;
+		background: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: grab;
+		height: 100px;
+		border-radius: 4px;
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	button {
+		line-height: 0;
+		border: none;
+		background: transparent;
+		cursor: pointer;
+		padding: 8px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.2s ease-in-out;
+		border-radius: 4px;
+
+		&:hover {
+			background: var(--blue-light);
+		}
+
+		&:disabled {
+			opacity: 0.5;
+			cursor: not-allowed;
+		}
+
+		svg {
+			width: 24px;
+			height: 24px;
+			fill: var(--blue-dark);
+		}
+	}
+</style>
